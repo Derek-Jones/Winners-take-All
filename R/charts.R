@@ -12,6 +12,6 @@ generatePlot <- function(param,ptext,ytext) {
   ggsave(p, filename=paste(month,"_",param,".png",sep=""))
 }
 generatePlot("prescriptions_per_capita", "Prescriptions per capita", "Prescriptions per capita")
-generatePlot("NIC_per_capita", "Prescription costs per capita", "Pounds per capita")
+generatePlot("NIC_per_capita", "Prescription costs per capita", "Prescription costs per capita (£)")
 generatePlot("residents_per_practice", "Residents per practice", "Residents")
 generatePlot("avg_generic_ratio", "Ratio of generic drugs in prescriptions", "Ratio")
