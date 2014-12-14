@@ -37,18 +37,22 @@
 
 <p>Investigated financial issues relating to UK prescription data (for Aug 2013 to July 2014).</p>
 
-<p>Started by looking at prices of <a href="http://publicdata.landregistry.gov.uk/market-trend-data/price-paid-data/a/pp-complete.csv">houses sold</a>.  Decided that this might not provide a good indicator of personal wealth.</p>
+<p>Started by looking at prices of <a href="http://publicdata.landregistry.gov.uk/market-trend-data/price-paid-data/a/pp-complete.csv">houses sold</a>.  Decided that this might not provide a good indicator of personal income.</p>
 
-<p>The <a href="http://www.ons.gov.uk/ons/rel/census/2011-census/index.html">2011 census</a>, <a href="http://www.ons.gov.uk/ons/rel/census/2011-census/population-and-household-estimates-for-wards-and-output-areas-in-england-and-wales/rft-table-php01-2011-MSOAs-and-LSOAs.zip">raw data</a>, gives average personal income within an <a href="http://www.ons.gov.uk/ons/guide-method/geography/beginner-s-guide/census/super-output-areas--soas-/index.html">MSOA</a> (middle layer super output layers; used to aid the reporting of small area statistics, an area containing 5,000 to 15,000 people).</p>
+<p>The <a href="http://www.ons.gov.uk/ons/rel/census/2011-census/index.html">2011 census</a> (<a href="http://www.ons.gov.uk/ons/rel/census/2011-census/population-and-household-estimates-for-wards-and-output-areas-in-england-and-wales/rft-table-php01-2011-MSOAs-and-LSOAs.zip">raw data</a>) gives average personal income within an <a href="http://www.ons.gov.uk/ons/guide-method/geography/beginner-s-guide/census/super-output-areas--soas-/index.html">MSOA</a> (middle layer super output layers; used to aid the reporting of small area statistics, an area containing 5,000 to 15,000 people).</p>
 
 <p>The prescription data included the postcode of the practice where it was written.  This was used to map practices to MSOAs using government <a href="https://geoportal.statistics.gov.uk/Docs/Lookups/Postcodes_(Enumeration)_(2011)_to_output_areas_(2011)_to_lower_layer_SOA_(2011)_to_middle_layer_SOA_(2011)_to_local_authority_districts_(2011)_E+W_lookup.zip">postcode data</a>.</p>
 
 <p><a href="https://en.wikipedia.org/wiki/Per_capita_income">Per capita income</a>, the mean income per person within an economic unit.</p>
 
-<p><a href="http://sandbox.hoonio.com/datahack/">Google map</a> of spending on prescriptions per capita for each MSOA.</p>
+<p>The following <a href="http://sandbox.hoonio.com/datahack/">Google map</a> of shows spending on prescriptions per capita for each MSOA.  Looking at a few of the areas suggested a connection between prescription costs and income; what form does this connection take and does it hold in general?</p>
 
 <p>Prescription costs per capita against household income, over all MSOA.
 <img src="https://raw.githubusercontent.com/Derek-Jones/Winners-take-All/master/plots/201309_NIC_per_capita.png" alt="alt text"></p>
+
+<p>The above plot shows that as household income increases the expenditure on prescriptions decreases (a plot based on number of prescriptions follows the same pattern).</p>
+
+<p>'Winners' appear to have fewer health issues (measured by prescriptions) and have greater income.</p>
       </section>
     </div>
 
