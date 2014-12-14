@@ -1,7 +1,18 @@
-data <- read.csv("201308NIC-MSOA-practices.csv")
+# time R --no-save --args "201308NIC-MSOA-practices.csv" < charts.R
+setwd("~/ohdh14/Winners-take-All/R")
 
+month <- commandArgs(trailingOnly = TRUE)
+fname <- paste("../data/",month,"NIC-MSOA-practices.csv",sep="")
+data <- read.csv(fname)
+data$prescriptions_per_capita <- data$prescriptions/data$residents
 library(ggplot2)
-ggplot(data, aes(annual_income, prescriptions_per_capita)) + stat_smooth() + theme_bw()
-ggplot(data, aes(annual_income, NIC_per_capita)) + stat_smooth()
-ggplot(data, aes(annual_income, residents_per_practice)) + stat_smooth()
-ggplot(data, aes(annual_income, avg_generic_ratio)) + stat_smooth()
+
+generatePlot <- function(param,ptext,ytext) {
+  p <- ggplot(data, aes_string(x="annual_income", y=param)) + stat_smooth() + theme_bw() + ggtitle(ptext) +xlab("Median annual income per capita in MSOA") + ylab(ytext)
+  ggsave(p, filename=paste(month,"_",param,".png",sep=""))
+}
+generatePlot("prescriptions_per_capita", "Prescriptions per capita", "Prescriptions per capita")
+generatePlot("NIC_per_capita", "Drug expenses per capita", "Pounds per capita")
+generatePlot("residents_per_practice", "Residents per practice", "Residents")
+generatePlot("avg_generic_ratio", "Ratio of generic drugs in prescriptions", "Residents")
+
