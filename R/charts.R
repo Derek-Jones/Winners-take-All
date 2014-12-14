@@ -23,8 +23,8 @@ generatePlot <- function(param,ptext,ytext,ymin,ymax) {
     monthName <- gsub("([0-9]{4})([0-9]{2})","\\1-\\2",month)
     sdata <- data[data$month == month,]
    
-    ymin <- mean(data[,param])-sd(data[,param]) 
-    ymax <- mean(data[,param])+sd(data[,param]) 
+    #ymin <- mean(data[,param])-sd(data[,param]) 
+    #ymax <- mean(data[,param])+sd(data[,param]) 
     p <- ggplot(sdata, aes_string(x="annual_income", y=param)) + 
       xlim(17680,88920) + 
       ylim(ymin,ymax) +
